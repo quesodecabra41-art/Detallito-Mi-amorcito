@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Mia</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -19,20 +19,16 @@
     <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-3" alt="Tulipán pequeño">
     <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-4" alt="Tulipán pequeño">
     <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-5" alt="Tulipán pequeño">
-    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-6" alt="Tulipán pequeño">
-    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-7" alt="Tulipán pequeño">
-    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-8" alt="Tulipán pequeño">
 
     <div class="container">
         
         <div class="encabezado-principal">
             <h1 class="titulo-bonito">Nuestra historia nunca tendra un final</h1>
-            <p class="subtitulo-bonito">Ya que tu y yo estamos destinados a amarnos de por vida Mia.</p>
+            <p class="subtitulo-bonito">ya que tu y yo estamos destinados a amarnos de por vida Mia.</p>
         </div>
 
         <div id="pantalla-clave">
             <h2 class="titulo-clave">🔒 Ingresa el PIN</h2>
-             <h2 class="titulo-clave">🔒 Ingresa el PIN</h2>
             
             <div id="pin-display" class="pin-display">
                 _ _ _ _
@@ -57,16 +53,18 @@
 
         <div id="pantalla-carta">
             <div class="carta-contenedor">
-                <div class="fecha">🗓️ Felices 5 meses, Mia</div>
+                <div class="fecha">🗓️ Felices 5 meses, mi amor</div>
                 
-                <div class="titulo-carta">≡ Mi amor eterno</div>
+                <h2 class="titulo-carta">Nuestra promesa</h2>
                 
                 <div class="foto-contenedor">
-                    <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=300&q=80" alt="Nuestra foto" class="foto-recuerdo">
+                    <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=400&q=80" alt="Nuestra foto" class="foto-recuerdo">
                 </div>
 
-                <div class="texto-carta">
-                    <p>Aquí irá el texto de tu carta...</p>
+                <div class="caja-texto">
+                    <p>Mi hermosa Mia, aquí puedes empezar a escribir todo lo que sientes por ella. Este recuadro está diseñado para que tu texto se vea elegante y ordenado.</p>
+                    <p>Cada vez que quieras hacer un párrafo nuevo, simplemente pon tu texto entre estas etiquetas <code>&lt;p&gt;</code> y <code>&lt;/p&gt;</code>, justo como está hecho aquí.</p>
+                    <p class="firma-carta">Te amo infinitamente. ♡</p>
                 </div>
             </div>
         </div>
@@ -74,7 +72,7 @@
     </div>
 
     <script>
-        const CLAVE_CORRECTA = "1421"; // <-- CAMBIA ESTO POR TU CLAVE
+        const CLAVE_CORRECTA = "0123"; // <-- PON TU PIN AQUÍ
         let claveIngresada = "";
         const display = document.getElementById("pin-display");
 
@@ -91,7 +89,6 @@
         }
 
         function agregarNumero(num) {
-            // Solo permite agregar hasta 4 números
             if (claveIngresada.length < 4) {
                 claveIngresada += num;
                 actualizarDisplay();
@@ -99,7 +96,6 @@
         }
 
         function borrarNumero() {
-            // Borra el último número ingresado
             if (claveIngresada.length > 0) {
                 claveIngresada = claveIngresada.slice(0, -1);
                 actualizarDisplay();
@@ -108,14 +104,11 @@
         }
 
         function verificarClave() {
-            // Solo verifica cuando se presiona OK
             if (claveIngresada === CLAVE_CORRECTA) {
-                // Oculta todo el inicio (incluyendo el título) y muestra la carta
                 document.querySelector('.encabezado-principal').style.display = "none";
                 document.getElementById("pantalla-clave").style.display = "none";
                 document.getElementById("pantalla-carta").style.display = "block";
                 
-                // Oculta también todos los tulipanes scattering
                 document.querySelectorAll('.tulipan, .small-tulipan').forEach(el => el.style.display = 'none');
             } else {
                 display.classList.add("error-shake");
