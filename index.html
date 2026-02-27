@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorpresa Especial</title>
+    <title>Para Mia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=300&q=80" class="clavel clavel-arriba-izq" alt="Clavel decorativo">
-    <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=300&q=80" class="clavel clavel-abajo-der" alt="Clavel decorativo">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=300&q=80" class="tulipan tulipan-izq" alt="Tulipán decorativo">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=300&q=80" class="tulipan tulipan-der" alt="Tulipán decorativo">
 
     <div class="container">
         
+        <div class="encabezado-principal">
+            <h1>Nuestra historia nunca tendra un final</h1>
+            <p>ya que tu y yo estamos destinados a amarnos de por vida Mia.</p>
+        </div>
+
         <div id="pantalla-clave">
-            <h2>🔒 Ingresa la contraseña</h2>
+            <h2>🔒 Ingresa el PIN</h2>
             
             <div id="pin-display" class="pin-display">
                 _ _ _ _
@@ -31,7 +36,7 @@
                 <button class="btn-tecla" onclick="agregarNumero('8')">8</button>
                 <button class="btn-tecla" onclick="agregarNumero('9')">9</button>
                 
-                <button class="btn-tecla btn-accion" onclick="borrarNumero()">⌫</button>
+                <button class="btn-tecla btn-accion btn-borrar" onclick="borrarNumero()">⌫</button>
                 <button class="btn-tecla" onclick="agregarNumero('0')">0</button>
                 <button class="btn-tecla btn-accion btn-submit" onclick="verificarClave()">OK</button>
             </div>
@@ -39,7 +44,7 @@
 
         <div id="pantalla-carta">
             <div class="carta-contenedor">
-                <div class="fecha">🗓️ 24 Junio 2025</div>
+                <div class="fecha">🗓️ [Fecha de su aniversario]</div>
                 
                 <div class="titulo-carta">≡ Para mi hermosa Mia</div>
                 
@@ -48,13 +53,7 @@
                 </div>
 
                 <div class="texto-carta">
-                    <p>Quiero que sepas lo feliz que soy por tenerte en mi vida. Desde que llegaste, todo cambió para mejor. Me haces sentir amada, cuidada y acompañada.</p>
-                    
-                    <p>A tu lado aprendí lo que es el amor verdadero, ese que se demuestra con acciones, con palabras sinceras y con esos pequeños detalles que hacen la diferencia.</p>
-                    
-                    <p>No sé cómo explicarlo, pero contigo mi corazón está en paz. Eres mi alegría diaria y la razón de tantas sonrisas.</p>
-
-                    <p class="despedida">Te amo profundamente. ♡</p>
+                    <p>Aquí irá el texto de tu carta...</p>
                 </div>
             </div>
         </div>
@@ -62,7 +61,7 @@
     </div>
 
     <script>
-        const CLAVE_CORRECTA = "0123"; 
+        const CLAVE_CORRECTA = "0123"; // <-- CAMBIA ESTO POR TU CLAVE
         let claveIngresada = "";
         const display = document.getElementById("pin-display");
 
@@ -79,6 +78,7 @@
         }
 
         function agregarNumero(num) {
+            // Solo permite agregar hasta 4 números
             if (claveIngresada.length < 4) {
                 claveIngresada += num;
                 actualizarDisplay();
@@ -86,6 +86,7 @@
         }
 
         function borrarNumero() {
+            // Borra el último número ingresado
             if (claveIngresada.length > 0) {
                 claveIngresada = claveIngresada.slice(0, -1);
                 actualizarDisplay();
@@ -93,9 +94,11 @@
             }
         }
 
-        // Esta función ahora solo se ejecuta al presionar "OK"
         function verificarClave() {
+            // Solo verifica cuando se presiona OK
             if (claveIngresada === CLAVE_CORRECTA) {
+                // Oculta todo el inicio (incluyendo el título) y muestra la carta
+                document.querySelector('.encabezado-principal').style.display = "none";
                 document.getElementById("pantalla-clave").style.display = "none";
                 document.getElementById("pantalla-carta").style.display = "block";
             } else {

@@ -1,6 +1,6 @@
-/* Estilos generales con gradiente celeste a verde claro */
+/* Fondo celeste claro de la página */
 body {
-    background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+    background-color: #e1f5fe; /* Celeste muy suave */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -9,61 +9,80 @@ body {
     margin: 0;
     color: #333;
     position: relative;
-    overflow: hidden; /* Evita que las imágenes de fondo hagan scroll extra */
+    overflow: hidden; 
 }
 
-/* Imágenes de claveles en el fondo */
-.clavel {
+/* Decoración de tulipanes de fondo */
+.tulipan {
     position: absolute;
-    width: 180px;
-    opacity: 0.6;
-    border-radius: 50%;
+    width: 250px;
+    opacity: 0.5; /* Medio transparentes para que no estorben a la vista */
     z-index: -1;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    mix-blend-mode: multiply; /* Hace que se integren lindo con el fondo celeste */
 }
 
-.clavel-arriba-izq {
-    top: -30px;
-    left: -30px;
+.tulipan-izq {
+    bottom: -30px;
+    left: -40px;
     transform: rotate(15deg);
 }
 
-.clavel-abajo-der {
-    bottom: -30px;
-    right: -30px;
-    transform: rotate(-25deg);
+.tulipan-der {
+    top: -30px;
+    right: -40px;
+    transform: rotate(-140deg);
 }
 
 .container {
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     padding: 20px;
     text-align: center;
     z-index: 1;
 }
 
-/* --- PANTALLA 1: TECLADO --- */
-#pantalla-clave {
-    display: block; 
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(5px);
+/* --- TÍTULO Y SUBTÍTULO --- */
+.encabezado-principal {
+    margin-bottom: 25px;
 }
 
-h2 {
+.encabezado-principal h1 {
+    font-size: 1.8rem;
+    color: #0277bd; /* Azul contrastante */
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.encabezado-principal p {
+    font-size: 1.1rem;
+    color: #0288d1;
+    font-style: italic;
+    margin: 0;
+}
+
+/* --- RECUADRO DE CONTRASEÑA (VERDE CLARO) --- */
+#pantalla-clave {
+    display: block; 
+    background-color: #dcedc8; /* Verde claro */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid #c5e1a5; /* Borde verde un poco más oscuro */
+}
+
+#pantalla-clave h2 {
     font-size: 1.2rem;
-    color: #4db6ac; /* Verde agua oscurecido */
+    color: #558b2f; /* Verde oscuro para el texto del recuadro */
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
 .pin-display {
-    font-size: 2rem;
+    font-size: 2.2rem;
     letter-spacing: 15px;
     margin-bottom: 30px;
     height: 40px;
-    color: #333;
+    color: #33691e;
 }
 
 .teclado {
@@ -74,18 +93,18 @@ h2 {
 
 .btn-tecla {
     background-color: #ffffff; 
-    border: 2px solid #b2ebf2; /* Borde celeste claro */
+    border: none;
     border-radius: 12px;
     font-size: 1.5rem;
-    color: #555;
+    color: #444;
     padding: 15px 0;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .btn-tecla:hover {
-    background-color: #e0f7fa;
+    background-color: #f1f8e9; /* Verde muy blanquecino al pasar el mouse */
     transform: translateY(-2px);
 }
 
@@ -93,16 +112,18 @@ h2 {
     transform: scale(0.95);
 }
 
-.btn-accion {
-    background-color: #f5f5f5;
-    font-size: 1.1rem;
-    border-color: #e0e0e0;
+.btn-borrar {
+    background-color: #ffcdd2; /* Rojito claro para borrar */
+    color: #c62828;
+}
+
+.btn-borrar:hover {
+    background-color: #ef9a9a;
 }
 
 .btn-submit {
-    background-color: #81c784; /* Verde claro vibrante */
+    background-color: #81c784; /* Verde más vibrante para el OK */
     color: white;
-    border-color: #66bb6a;
     font-weight: bold;
 }
 
@@ -112,7 +133,7 @@ h2 {
 
 /* --- PANTALLA 2: LA CARTA --- */
 #pantalla-carta {
-    display: none; /* ESTO OCULTA LA CARTA AL INICIO */
+    display: none; /* Oculta al inicio */
 }
 
 .carta-contenedor {
@@ -133,13 +154,12 @@ h2 {
 .titulo-carta {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #4db6ac;
+    color: #0277bd;
     margin-bottom: 20px;
-    border-bottom: 2px solid #e0f7fa;
+    border-bottom: 2px solid #e1f5fe;
     padding-bottom: 10px;
 }
 
-/* Espacio para la foto */
 .foto-contenedor {
     text-align: center;
     margin-bottom: 20px;
@@ -158,18 +178,6 @@ h2 {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #555;
-}
-
-.texto-carta p {
-    margin-bottom: 15px;
-}
-
-.despedida {
-    text-align: center; 
-    font-weight: bold; 
-    color: #81c784; 
-    margin-top: 25px;
-    font-size: 1.1rem;
 }
 
 /* Efecto de temblor */
