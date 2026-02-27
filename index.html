@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Mia</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -11,15 +14,25 @@
     <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=300&q=80" class="tulipan tulipan-izq" alt="Tulipán decorativo">
     <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=300&q=80" class="tulipan tulipan-der" alt="Tulipán decorativo">
 
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-1" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-2" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-3" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-4" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-5" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-6" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-7" alt="Tulipán pequeño">
+    <img src="https://images.unsplash.com/photo-1520764834381-81d7cc01f78e?auto=format&fit=crop&w=100&q=80" class="small-tulipan s-tulipan-8" alt="Tulipán pequeño">
+
     <div class="container">
         
         <div class="encabezado-principal">
-            <h1>Nuestra historia nunca tendra un final</h1>
-            <p>ya que tu y yo estamos destinados a amarnos de por vida Mia.</p>
+            <h1 class="titulo-bonito">Nuestra historia nunca tendra un final</h1>
+            <p class="subtitulo-bonito">Ya que tu y yo estamos destinados a amarnos de por vida Mia.</p>
         </div>
 
         <div id="pantalla-clave">
-            <h2>🔒 Ingresa el PIN</h2>
+            <h2 class="titulo-clave">🔒 Ingresa el PIN</h2>
+             <h2 class="titulo-clave">🔒 Ingresa el PIN</h2>
             
             <div id="pin-display" class="pin-display">
                 _ _ _ _
@@ -44,9 +57,9 @@
 
         <div id="pantalla-carta">
             <div class="carta-contenedor">
-                <div class="fecha">🗓️ Felices 5 meses</div>
+                <div class="fecha">🗓️ Felices 5 meses, Mia</div>
                 
-                <div class="titulo-carta">≡ Para mi hermosa Mia</div>
+                <div class="titulo-carta">≡ Mi amor eterno</div>
                 
                 <div class="foto-contenedor">
                     <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=300&q=80" alt="Nuestra foto" class="foto-recuerdo">
@@ -61,7 +74,7 @@
     </div>
 
     <script>
-        const CLAVE_CORRECTA = "0123"; // <-- RECUERDA CAMBIAR ESTO POR TU CLAVE
+        const CLAVE_CORRECTA = "1421"; // <-- CAMBIA ESTO POR TU CLAVE
         let claveIngresada = "";
         const display = document.getElementById("pin-display");
 
@@ -101,6 +114,9 @@
                 document.querySelector('.encabezado-principal').style.display = "none";
                 document.getElementById("pantalla-clave").style.display = "none";
                 document.getElementById("pantalla-carta").style.display = "block";
+                
+                // Oculta también todos los tulipanes scattering
+                document.querySelectorAll('.tulipan, .small-tulipan').forEach(el => el.style.display = 'none');
             } else {
                 display.classList.add("error-shake");
                 setTimeout(() => {
@@ -116,6 +132,3 @@
 
 </body>
 </html>
-
-</html>
-
